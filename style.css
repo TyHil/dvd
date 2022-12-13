@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*prefers-reduced-motion*/
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/*Dark Mode*/
+body {
+  accent-color: #128A74;
+}
+
+/*Light Mode*/
+@media (prefers-color-scheme: light) {
+  body {
+    accent-color: #1BCBAC;
+  }
+}
+
+/*Body*/
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--bgColor);
+  transition: background-color 200ms;
+}
+#dvd {
+  position: absolute;
+  fill: var(--color);
+  transition: fill 200ms;
+  width: 25vw;
+}
+
+#color {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  transition: opacity 200ms;
+}
+#color:hover {
+  opacity: 1;
+}
