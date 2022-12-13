@@ -43,7 +43,7 @@ window.addEventListener('resize', resize);
 function color() {
   if (colorSetting.checked) {
     dvd.style.setProperty('--color', "#" + Math.floor(Math.random() * 16777215).toString(16));
-    document.body.style.setProperty('--color', '#000');
+    document.body.style.setProperty('--bgColor', '#000');
   } else {
     const colors = ['#70A4C4', '#ABC979', '#7F7094', '#FFADAD', '#FFE49C'].filter(function(item) {
         return item !== dvd.style.getPropertyValue('--color');
