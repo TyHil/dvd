@@ -1,3 +1,13 @@
+/* Tab Icon */
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+  document.querySelector('link[rel="icon"]').href = './tabicon-light.png';
+}
+
+
+
+/* Variables */
+
 const dvd = document.getElementById('dvd');
 const colorSetting = document.getElementById('color');
 
@@ -8,25 +18,17 @@ let screenWidth = window.innerWidth;
 
 
 
-/* Tab icon */
-
-const faviconEl = document.querySelector('link[rel="icon"]');
-window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (event) {
-  if (event.matches) {
-    faviconEl.href = '/dvd/tabicon-light.png';
-  } else {
-    faviconEl.href = '/dvd/tabicon.png';
-  }
-});
-
-
-
-/* Old color setting */
+/* Color setting */
 
 const old = localStorage.getItem('colorSetting');
 if (old !== null && old != 'undefined') {
   colorSetting.checked = old === 'true';
 }
+
+colorSetting.addEventListener('click', function() {
+  localStorage.setItem('colorSetting', this.checked);
+  color();
+});
 
 
 
@@ -70,14 +72,6 @@ function move() {
     vX = -vX;
     color();
   }
+  requestAnimationFrame(move);
 }
-setInterval(move, 1000 / 60);
-
-
-
-/* Color setting */
-
-colorSetting.addEventListener('click', function() {
-  localStorage.setItem('colorSetting', this.checked);
-  color();
-});
+requestAnimationFrame(move);
