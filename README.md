@@ -4,7 +4,8 @@ Website to bounce DVD available at [tylergordonhill.com/dvd](https://tylergordon
 
 ## Set-up
 
-Instructions to run available in the [parent repository](https://github.com/TyHil/personal-website#set-up).
+Instructions to run available in the
+[parent repository](https://github.com/TyHil/personal-website#set-up).
 
 ## License
 
